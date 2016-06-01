@@ -53,15 +53,33 @@
     self.positions[@"연신내"] = [NSValue valueWithCGPoint:p];
     p = CGPointMake(190.09454527078381, 445.42863862266563);
     self.positions[@"대화"] = [NSValue valueWithCGPoint:p];
-    NSLog(@"%@",self.positions);
+    p = CGPointMake(1439, 1088.5);
+    self.positions[@"압구정"] = [NSValue valueWithCGPoint:p];
     
+    p = CGPointMake(1435.5, 1048);
+    self.positions[@"옥수"] = [NSValue valueWithCGPoint:p];
+    
+    p = CGPointMake(1436, 974);
+    self.positions[@"금호"] = [NSValue valueWithCGPoint:p];
+    
+    p = CGPointMake(1436.5, 914.5);
+    self.positions[@"약수"] = [NSValue valueWithCGPoint:p];
+    
+    p = CGPointMake(1361.5, 846.5);
+    self.positions[@"동대입구"] = [NSValue valueWithCGPoint:p];
+    
+    p = CGPointMake(1327.5, 803.5);
+    self.positions[@"충무로"] = [NSValue valueWithCGPoint:p];
+    
+    p = CGPointMake(1223, 706.5);
+    self.positions[@"을지로3가"] = [NSValue valueWithCGPoint:p];
     
 }
 
 
 -(void)singleTapGestureCaptured:(UITapGestureRecognizer *)recognizer {
     CGPoint touchPoint = [recognizer locationInView:self.imageView];
-    
+    NSLog(@"%@",NSStringFromCGPoint(touchPoint));
     NSString *subwayName = @"";
     CGFloat distance = CGFLOAT_MAX;
     CGPoint stationPoint = CGPointZero;
@@ -75,6 +93,9 @@
             subwayName = key;
             stationPoint = p;
         }
+    }
+    if (distance > 100) {
+//        return;
     }
     NSLog(@"%@",subwayName);
     
@@ -96,7 +117,6 @@
     convertedPoint.x -= self.scrollView.frame.size.width/2.0;
     convertedPoint.y -= self.scrollView.frame.size.height/2.0;
     [self.scrollView setContentOffset:convertedPoint animated:YES];
-    
 }
 
 - (void)didReceiveMemoryWarning {
