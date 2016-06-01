@@ -17,6 +17,9 @@
 @property(strong) Graph *graph;
 @property(strong) NSMutableDictionary *positions;
 
+@property(strong) NSString *startStation;
+@property(strong) NSString *endStation;
+
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
@@ -97,12 +100,21 @@
     if (distance > 100) {
 //        return;
     }
+    if (self.startStation == nil) {
+        self.startStation = subwayName;
+    } else {
+        self.endStation = subwayName;
+    }
     NSLog(@"%@",subwayName);
     
     UIView *v = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
     v.center = stationPoint;
     
-    v.backgroundColor = [UIColor redColor];
+    if (self.startStation == subwayName) {
+        v.backgroundColor = [UIColor redColor];
+    } else {
+        v.backgroundColor = [UIColor blueColor];
+    }
     v.alpha = 0.5;
     v.layer.cornerRadius = 25.0;
     [self.imageView addSubview:v];
@@ -117,6 +129,78 @@
     convertedPoint.x -= self.scrollView.frame.size.width/2.0;
     convertedPoint.y -= self.scrollView.frame.size.height/2.0;
     [self.scrollView setContentOffset:convertedPoint animated:YES];
+    
+    if (self.startStation != nil && self.endStation != nil) {
+        [self startFindPath];
+    }
+}
+
+-(void)startFindPath {
+    NSString *start = self.startStation;
+    NSInteger startNumber = [self.subway nameToIndex:start];
+    NSString *end = self.endStation;
+    NSInteger endNumber = [self.subway nameToIndex:end];
+    NSArray *result = [self.graph bfsWithStart:startNumber andEnd:endNumber];
+    NSArray *path = result[0];
+    NSNumber *distance = result[1];
+    NSMutableArray *pathWithName = [NSMutableArray array];
+    for (NSNumber *num in path) {
+        [pathWithName addObject:[self.subway indexToName:[num integerValue]]];
+    }
+    NSLog(@"%@",[pathWithName componentsJoinedByString:@" => "]);
+    NSLog(@"%@m", distance);
+    // 50km/h = 50000m/h => 833.33333333 m / min
+    double d = [distance doubleValue];
+    double minute = d / 800.0 + 0.4*([path count] - 1);
+    NSLog(@"%.2lf분",minute);
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:@"%@ => %@", self.startStation, self.endStation] message:[NSString stringWithFormat:@"%.0lf분", minute] preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alertController addAction:[UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self drawLines:pathWithName];
+        self.startStation = nil;
+        self.endStation = nil;
+    }]];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+    
+    
+    
+}
+
+-(void)drawLines:(NSMutableArray *)paths {
+    NSMutableArray *layersToRemove = [NSMutableArray array];
+    for (id layer in self.imageView.layer.sublayers) {
+        if ([layer isKindOfClass:[CAShapeLayer class]]) {
+            [layersToRemove addObject:layer];
+        }
+    }
+    for (id layer in layersToRemove) {
+        [layer removeFromSuperlayer];
+    }
+    UIBezierPath *path = [UIBezierPath bezierPath];
+    CGPoint fromPoint = [self.positions[paths[0]] CGPointValue];
+    [path moveToPoint:fromPoint];
+    for (int i=1; i<(int)paths.count; i++) {
+        NSString *to = paths[i];
+        CGPoint toPoint = [self.positions[to] CGPointValue];
+        [path addLineToPoint:toPoint];
+    }
+    
+    CAShapeLayer *shapeLayer = [CAShapeLayer layer];
+    shapeLayer.path = [path CGPath];
+    shapeLayer.strokeColor = [[UIColor greenColor] CGColor];
+    shapeLayer.lineWidth = 25.0;
+    shapeLayer.cornerRadius = 5.0;
+    shapeLayer.fillColor = [[UIColor clearColor] CGColor];
+    [self.imageView.layer addSublayer:shapeLayer];
+    
+    CABasicAnimation *pathAnimtation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
+    pathAnimtation.duration = 1.0;
+    pathAnimtation.fromValue = @(0.0);
+    pathAnimtation.toValue = @(1.0);
+    [shapeLayer addAnimation:pathAnimtation forKey:@"strokeEnd"];
+    
 }
 
 - (void)didReceiveMemoryWarning {
