@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,42 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="Qdq-AH-us9">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Subwaymap_Kor.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="mDs-Mi-wGR">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="mDs-Mi-wGR" firstAttribute="leading" secondItem="Qdq-AH-us9" secondAttribute="leading" id="5XA-Ds-cfl"/>
+                                    <constraint firstItem="mDs-Mi-wGR" firstAttribute="top" secondItem="Qdq-AH-us9" secondAttribute="top" id="RQS-9q-LCo"/>
+                                    <constraint firstAttribute="trailing" secondItem="mDs-Mi-wGR" secondAttribute="trailing" id="SJY-eM-zmN"/>
+                                    <constraint firstAttribute="bottom" secondItem="mDs-Mi-wGR" secondAttribute="bottom" id="weA-bx-qeI"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="R65-8e-Wmc"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Qdq-AH-us9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Mbm-s2-MbV"/>
+                            <constraint firstItem="Qdq-AH-us9" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="W3J-us-qwC"/>
+                            <constraint firstAttribute="trailing" secondItem="Qdq-AH-us9" secondAttribute="trailing" id="dHO-gS-g0c"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Qdq-AH-us9" secondAttribute="bottom" id="gjh-ou-rhl"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="mDs-Mi-wGR" id="dqa-of-uHc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="Subwaymap_Kor.jpg" width="2526" height="1785"/>
+    </resources>
 </document>

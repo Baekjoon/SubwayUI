@@ -13,6 +13,7 @@
 		73F649EB1CFEAB470005D53E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73F649E91CFEAB470005D53E /* Main.storyboard */; };
 		73F649ED1CFEAB470005D53E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73F649EC1CFEAB470005D53E /* Assets.xcassets */; };
 		73F649F01CFEAB470005D53E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73F649EE1CFEAB470005D53E /* LaunchScreen.storyboard */; };
+		73F649F81CFEABE00005D53E /* Subwaymap_Kor.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 73F649F71CFEABE00005D53E /* Subwaymap_Kor.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		73F649EC1CFEAB470005D53E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		73F649EF1CFEAB470005D53E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		73F649F11CFEAB470005D53E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		73F649F71CFEABE00005D53E /* Subwaymap_Kor.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Subwaymap_Kor.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				73F649EC1CFEAB470005D53E /* Assets.xcassets */,
 				73F649EE1CFEAB470005D53E /* LaunchScreen.storyboard */,
 				73F649F11CFEAB470005D53E /* Info.plist */,
+				73F649F71CFEABE00005D53E /* Subwaymap_Kor.jpg */,
 				73F649E01CFEAB470005D53E /* Supporting Files */,
 			);
 			path = SubwayUI;
@@ -110,6 +113,7 @@
 				TargetAttributes = {
 					73F649DC1CFEAB470005D53E = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 39CXW393ZX;
 					};
 				};
 			};
@@ -136,6 +140,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73F649F81CFEABE00005D53E /* Subwaymap_Kor.jpg in Resources */,
 				73F649F01CFEAB470005D53E /* LaunchScreen.storyboard in Resources */,
 				73F649ED1CFEAB470005D53E /* Assets.xcassets in Resources */,
 				73F649EB1CFEAB470005D53E /* Main.storyboard in Resources */,
@@ -265,9 +270,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = SubwayUI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.startlink.SubwayUI;
+				PRODUCT_BUNDLE_IDENTIFIER = com.megalusion.SubwayUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -276,9 +282,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = SubwayUI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.startlink.SubwayUI;
+				PRODUCT_BUNDLE_IDENTIFIER = com.megalusion.SubwayUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
