@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="Qdq-AH-us9">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="Qdq-AH-us9">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Subwaymap_Kor.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="mDs-Mi-wGR">
@@ -45,6 +45,7 @@
                     </view>
                     <connections>
                         <outlet property="imageView" destination="mDs-Mi-wGR" id="dqa-of-uHc"/>
+                        <outlet property="scrollView" destination="Qdq-AH-us9" id="ZQQ-aG-nyA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

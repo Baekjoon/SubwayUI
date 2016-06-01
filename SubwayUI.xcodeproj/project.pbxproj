@@ -14,6 +14,12 @@
 		73F649ED1CFEAB470005D53E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73F649EC1CFEAB470005D53E /* Assets.xcassets */; };
 		73F649F01CFEAB470005D53E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73F649EE1CFEAB470005D53E /* LaunchScreen.storyboard */; };
 		73F649F81CFEABE00005D53E /* Subwaymap_Kor.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 73F649F71CFEABE00005D53E /* Subwaymap_Kor.jpg */; };
+		73F64A031CFEB6850005D53E /* AdjList.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F649FA1CFEB6850005D53E /* AdjList.m */; };
+		73F64A041CFEB6850005D53E /* Edge.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F649FC1CFEB6850005D53E /* Edge.m */; };
+		73F64A051CFEB6850005D53E /* Graph.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F649FE1CFEB6850005D53E /* Graph.m */; };
+		73F64A061CFEB6850005D53E /* NSMutableArray+Queue.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F64A001CFEB6850005D53E /* NSMutableArray+Queue.m */; };
+		73F64A071CFEB6850005D53E /* Subway.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F64A021CFEB6850005D53E /* Subway.m */; };
+		73F64A091CFEBA1A0005D53E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73F64A081CFEBA1A0005D53E /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +34,17 @@
 		73F649EF1CFEAB470005D53E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		73F649F11CFEAB470005D53E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73F649F71CFEABE00005D53E /* Subwaymap_Kor.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Subwaymap_Kor.jpg; sourceTree = "<group>"; };
+		73F649F91CFEB6850005D53E /* AdjList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdjList.h; sourceTree = "<group>"; };
+		73F649FA1CFEB6850005D53E /* AdjList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdjList.m; sourceTree = "<group>"; };
+		73F649FB1CFEB6850005D53E /* Edge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Edge.h; sourceTree = "<group>"; };
+		73F649FC1CFEB6850005D53E /* Edge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Edge.m; sourceTree = "<group>"; };
+		73F649FD1CFEB6850005D53E /* Graph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph.h; sourceTree = "<group>"; };
+		73F649FE1CFEB6850005D53E /* Graph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Graph.m; sourceTree = "<group>"; };
+		73F649FF1CFEB6850005D53E /* NSMutableArray+Queue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Queue.h"; sourceTree = "<group>"; };
+		73F64A001CFEB6850005D53E /* NSMutableArray+Queue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Queue.m"; sourceTree = "<group>"; };
+		73F64A011CFEB6850005D53E /* Subway.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Subway.h; sourceTree = "<group>"; };
+		73F64A021CFEB6850005D53E /* Subway.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Subway.m; sourceTree = "<group>"; };
+		73F64A081CFEBA1A0005D53E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73F64A091CFEBA1A0005D53E /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,7 +87,18 @@
 				73F649EE1CFEAB470005D53E /* LaunchScreen.storyboard */,
 				73F649F11CFEAB470005D53E /* Info.plist */,
 				73F649F71CFEABE00005D53E /* Subwaymap_Kor.jpg */,
+				73F649F91CFEB6850005D53E /* AdjList.h */,
+				73F649FA1CFEB6850005D53E /* AdjList.m */,
+				73F649FB1CFEB6850005D53E /* Edge.h */,
+				73F649FC1CFEB6850005D53E /* Edge.m */,
+				73F649FD1CFEB6850005D53E /* Graph.h */,
+				73F649FE1CFEB6850005D53E /* Graph.m */,
+				73F649FF1CFEB6850005D53E /* NSMutableArray+Queue.h */,
+				73F64A001CFEB6850005D53E /* NSMutableArray+Queue.m */,
+				73F64A011CFEB6850005D53E /* Subway.h */,
+				73F64A021CFEB6850005D53E /* Subway.m */,
 				73F649E01CFEAB470005D53E /* Supporting Files */,
+				73F64A081CFEBA1A0005D53E /* QuartzCore.framework */,
 			);
 			path = SubwayUI;
 			sourceTree = "<group>";
@@ -154,9 +183,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73F64A051CFEB6850005D53E /* Graph.m in Sources */,
+				73F64A061CFEB6850005D53E /* NSMutableArray+Queue.m in Sources */,
+				73F64A041CFEB6850005D53E /* Edge.m in Sources */,
 				73F649E81CFEAB470005D53E /* ViewController.m in Sources */,
 				73F649E51CFEAB470005D53E /* AppDelegate.m in Sources */,
 				73F649E21CFEAB470005D53E /* main.m in Sources */,
+				73F64A071CFEB6850005D53E /* Subway.m in Sources */,
+				73F64A031CFEB6850005D53E /* AdjList.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
